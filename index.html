@@ -9,12 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./src/styles.css">
   <script src="./src/script.js" defer></script>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+
 </head>
 <body>
   <!--Weather Card-->
   <div class="card">
     <div class="search">
-      <input type="text" class="search-bar" placeholder="Search">
+      <input type="text" class="search-bar" placeholder="Enter the city ">
       <button><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em"
           width="1.5em" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -24,14 +26,26 @@
     </div>
     <div class="weather loading">
       <h2 class="city">Weather in Vavuniya</h2>
+      <h2 class="country">Lk</h2>
+      <!-- <h2 class="lat">kilakku</h2> -->
+      
       <h1 class="temp">usually 30.2°C</h1>
       <div class="flex">
         <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
         <div class="description">Cloudy</div>
+        
       </div>
+      <div class="main">Open</div>
+      <div class="visibility">vis</div>
       <div class="humidity">Humidity: 91%</div>
-      <div class="feels_like">Humidity: 91%</div>
+      <div class="feels_like">Feels like: 91%</div>
+      <div class="temp_min">Temp_min: 30.2°C</div>
+      <div class="temp_max">Temp_max: 30.2°C</div>
+      <div class="pressure">Pressure: 100Hg</div>
       <div class="wind">Wind speed: 63.05 km/h</div>
+      <div class="sunrise">Wind speed: 63.05 km/h</div>
+      <div class="sunset">Wind speed: 63.05 km/h</div>
+      <div class="a">logic</div>
     </div>
     <a target="_blank" rel="noopener noreferrer" href="https://github.com/nagarajpandith/weather-app">
       <img alt="github" src="./images/logo.png" width="100" height="100"></a>
