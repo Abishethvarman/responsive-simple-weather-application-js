@@ -18,28 +18,58 @@ let weather = {
       .then((data) => this.displayWeather(data));
   },
   displayWeather: function (data) {
-    const { name } = data;
-    const { icon, description } = data.weather[0];
+    const { name, visibility,timezone } = data;
+    const { icon, description, main } = data.weather[0];
+    // const { lat,lon } = data.coord[0];
     const { temp, humidity, feels_like, temp_min, temp_max, pressure } = data.main;
     const { speed } = data.wind;
+    const { country,sunrise,sunset } = data.sys;
     document.querySelector(".city").innerText = "Weather in " + name;
-    document.querySelector(".icon").src =
-      "https://openweathermap.org/img/wn/" + icon + ".png";
+    document.querySelector(".country").innerText = "," + country;
+    // document.querySelector(".lan").innerText = "Lattitude " + lat;
+
+    document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
+    document.querySelector(".main").innerText = "Mainly " + main;
+    document.querySelector(".sunrise").innerText = "Sunrise " + moment.utc(sunrise,'X').add(timezone,'seconds').format('HH:mm a');
+    document.querySelector(".sunset").innerText = "Sunset at " + moment.utc(sunset,'X').add(timezone,'seconds').format('HH:mm a');
     document.querySelector(".description").innerText = description;
+    document.querySelector(".visibility").innerText = visibility;
     document.querySelector(".temp").innerText = temp + "°C";
-    document.querySelector(".humidity").innerText =
-      "Humidity: " + humidity + "%";
-    document.querySelector(".feels_like").innerText =
-      "Feels Like: " + feels_like + "°C";
-    document.querySelector(".wind").innerText =
-      "Wind speed: " + speed + " km/h";
+    document.querySelector(".feels_like").innerText ="Feels Like: " + feels_like + "°C";
+    document.querySelector(".temp_min").innerText = "Minimum Temperature: " + temp_min + "°C";
+    document.querySelector(".temp_max").innerText = "Maximum Temperature: " + temp_max + "°C";
+    document.querySelector(".humidity").innerText ="Humidity: " + humidity + "%";
+    document.querySelector(".pressure").innerText ="Pressure: " + pressure + "Hg";
+    document.querySelector(".wind").innerText ="Wind speed: " + speed + " km/h";
     document.querySelector(".weather").classList.remove("loading");
-    document.body.style.backgroundImage =
-      "url('https://source.unsplash.com/1600x900/?" + name + "')";
+    
+    var ab = (temp>=10) ? "hot":"cool";
+    document.querySelector(".ab") ="a: " + ab + "Hg";
+
+    document.body.style.backgroundImage ="url('https://source.unsplash.com/1600x900/?" + name + "')";
+    document.querySelector(".temp").innerText = temp + "°C";
+  //   const a = ()=>{
+  //   if(this.temp>30){
+  //     console.log("suc")
+  //   }
+  // else{
+  //   console.log("wrong")
+  // }}
+  //   console.log(a);
+
+  //   document.querySelector(".a").innerText ="a: " + a + "Hg";
   },
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value);
   },
+  // message: function(data) {
+
+  //   const { temp, humidity, feels_like, temp_min, temp_max, pressure } = data.main;
+  //   let a = (temp >30) ? "hot":"cool";
+    
+  //   document.querySelector(".a") ="a: " + a + "Hg";
+  // },
+
 };
 
 /* Fetching Data from OpenCageData Geocoder */
