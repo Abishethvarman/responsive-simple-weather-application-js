@@ -14,6 +14,7 @@
 </head>
 <body>
   <!--Weather Card-->
+  <img alt="lgo" src="./images/logo.png" width="100" height="100" style="position:relative"></a>
   <div class="card">
     <div class="search">
       <input type="text" class="search-bar" placeholder="Enter the city ">
@@ -25,18 +26,15 @@
         </svg></button>
     </div>
     <div class="weather loading">
-      <h2 class="city">Weather in Vavuniya</h2>
-      <h2 class="country">Lk</h2>
-      <!-- <h2 class="lat">kilakku</h2> -->
-      
-      <h1 class="temp">usually 30.2°C</h1>
+      <h2 class="city">Weather in Vavuniya, LK</h2>
+      <h1 class="temp" id="temp">usually 30.2°C</h1>
       <div class="flex">
         <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
         <div class="description">Cloudy</div>
         
       </div>
-      <div class="main">Open</div>
-      <div class="visibility">vis</div>
+      <div class="main" id="main">Open</div>
+      <!-- <div class="visibility">vis</div> -->
       <div class="humidity">Humidity: 91%</div>
       <div class="feels_like">Feels like: 91%</div>
       <div class="temp_min">Temp_min: 30.2°C</div>
@@ -45,21 +43,18 @@
       <div class="wind">Wind speed: 63.05 km/h</div>
       <div class="sunrise">Wind speed: 63.05 km/h</div>
       <div class="sunset">Wind speed: 63.05 km/h</div>
-      <div class="a">logic</div>
+      
+      <div class="button-box">
+        <button2 onclick="msg1()">Soottu viparam  </button2>
+        <button2 onclick="msg2()">Veli nilavaram</button2>
+        <button2 onclick="msg3()">Veliyala    </button2>
+      </div>
+      <div class="container">
+      <div class="atemp" id="atemp"></div>
+      <div class="aMain" id="aMain"></div>
+      <div class="aMain2" id="aMain2"></div>
     </div>
-    <a target="_blank" rel="noopener noreferrer" href="https://github.com/nagarajpandith/weather-app">
-      <img alt="github" src="./images/logo.png" width="100" height="100"></a>
+    </div>
   </div>
-  <!--Vanilla tilt.js Library Refer- https://micku7zu.github.io/vanilla-tilt.js/ -->  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-  <!-- <script>
-    VanillaTilt.init(document.querySelectorAll(".card"), {
-		max: 4,
-		speed: 800,
-    scale: 1.03,
-    glare: true,
-    "max-glare": 0.5,
-	});
-  </script> -->
 </body>
 </html>
